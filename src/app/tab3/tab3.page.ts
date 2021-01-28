@@ -9,4 +9,10 @@ export class Tab3Page {
 
   constructor() {}
 
+
+  public mostrarMenu(e){
+    console.log(e);
+  }
+
+
 }

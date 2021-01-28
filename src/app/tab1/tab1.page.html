@@ -1,9 +1,5 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+  <app-header class="header-class" (eventMostrarMenu)="mostrarMenu($event)"></app-header>
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -13,5 +9,19 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+
+  <ion-button color="secondary" expand="block" (click)="getRickData()">get info Rick</ion-button>
+
+  <div *ngFor="let personaje of personajes">
+
+    <app-card-rick [nombre]="personaje.name" [genero]="personaje.gender" [imagen]="personaje.image" [status]="personaje.status" 
+    [origen]="personaje.origin.name" [specie]="personaje.species" (click)="eventoPersonaje($event)"></app-card-rick>
+
+    
+
+  </div>
+
+
+
+
 </ion-content>

@@ -1,0 +1,30 @@
+<ion-card>
+  <ion-card-header>
+
+    <ion-card-title style="text-align:center">
+      {{nombre}}
+    </ion-card-title>
+  </ion-card-header>
+
+  <div style="padding: 10px; height: 10%;">
+
+    <ion-img [src]="imagen"></ion-img>
+  </div>
+
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        Genero: {{genero}}
+      </ion-item>
+      <ion-item>
+        Origen: {{origen}}
+      </ion-item>
+      <ion-item>
+        Status: {{status}}
+      </ion-item>
+      <ion-item>
+        Specie: {{specie}}
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
