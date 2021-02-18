@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {RickMortyService} from './../providers/rick-morty.service'
+import {RickMortyService} from './../providers/rick-morty.service';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -8,11 +9,21 @@ import {RickMortyService} from './../providers/rick-morty.service'
 })
 export class Tab1Page {
 
-
+  public tittle="API Rick y Morty"
   public urlImage= "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
   public personajes:any;
+  public icon="business-outline"
+  public color="primary"
+  public name:string;
+  public mostrarFormulario=true
+
+  public relationships=[{tipo:"Conmigo mismo", puntaje:5},{tipo:"Graduandome", puntaje:8}, {tipo:"Relación seria", puntaje:9},{tipo: "Un parche", puntaje:9}]
+
+
+
   constructor(
-    private rickMortyService:RickMortyService
+    private rickMortyService:RickMortyService,
+    private toastController: ToastController
 
   ) {}
 
@@ -22,6 +33,13 @@ export class Tab1Page {
 
 
   public getRickData(){
+
+    this.mostrarFormulario=false;
+
+    this.icon="person-circle-outline";
+    this.color="danger"
+
+    this.presentToast("Consume servicio Rick y Morty")
 
     this.rickMortyService.get("1,2,3,4,5,6,7,8,9,10").subscribe( res =>{
        this.personajes=  res;
@@ -35,6 +53,21 @@ export class Tab1Page {
 
   public eventoPersonaje(e){
     console.log(e)
+  }
+
+  public catchOnRelationship(e){
+    console.log(e['detail']['checked'])
+
+  }
+
+  async presentToast(msg:string) {
+    const toast = await this.toastController.create({
+      message: msg,
+      duration: 1300,
+      color:'success',
+      cssClass:'toastStyle'
+    });
+    toast.present();
   }
 
 }

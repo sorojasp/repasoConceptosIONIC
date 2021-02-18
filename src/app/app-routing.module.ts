@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./shared/pages/login/login.module').then( m => m.LoginPageModule)
+  }, 
+  {
+    path: 'student',
+    loadChildren: () => import('./students/students.module').then(m=>m.StudentsModule)
   }
 ];
 @NgModule({
