@@ -7,7 +7,8 @@ import { IonicModule } from '@ionic/angular';
 @NgModule({
   declarations: [StudentsComponent],
   imports: [
-    CommonModule, StudentsRoutingModule, 
+    CommonModule, 
+    StudentsRoutingModule, 
     IonicModule,
   ]
 })

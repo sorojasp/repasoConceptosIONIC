@@ -16,7 +16,13 @@ export class Tab2Page {
   }
 
   public goLogin(){
-    this.router.navigate(['../student/form']);
+    this.router.navigate(['../student/form', {
+      name: true,
+      lastName:"Rojas"
+
+    }]
+      
+    );
 
   }
 
