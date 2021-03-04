@@ -1,9 +1,48 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
+  <app-header></app-header>
+
 </ion-header>
 
 <ion-content>
+
+  <ion-text>
+    <p style="font-weight: bold; text-align:center">Login</p>
+  </ion-text>
+
+  <div style="padding: 5px">
+  
+    <ion-list>
+
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email"  (ionChange)="obtenerEmail($event)" ></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="Password"  (ionChange)="obtenerPassword($event)"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+  
+
+  <ion-button expand="block" [disabled]="!this.enableButton" (click)="logear()">
+
+
+    <div style="padding-right: 5px; zoom:1.5">
+      <ion-icon name="log-in-outline"></ion-icon>
+    </div>
+
+    <ion-text>
+      Ingresar
+    </ion-text>
+
+
+
+  </ion-button>
+
+</div>
 
 </ion-content>
