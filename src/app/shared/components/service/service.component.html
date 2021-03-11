@@ -1,0 +1,15 @@
+
+<div style="display: flex; flex-direction: row; align-items: center;">
+
+  <div style="padding-right: 3px; color:blue">
+  <ion-icon [name]="this.icon"></ion-icon>
+</div>
+
+<p>
+  name:{{this.name}}
+</p>
+
+</div>
+
+
+<ion-button expand="block" (click)="this.eventHandler($event)">change name</ion-button>
