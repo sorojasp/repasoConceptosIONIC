@@ -15,7 +15,8 @@ export class Tab1Page {
   public icon="business-outline"
   public color="primary"
   public name:string;
-  public mostrarFormulario=true
+  public mostrarFormulario=true;
+  public showContent:boolean=true
 
   public relationships=[{tipo:"Conmigo mismo", puntaje:5},{tipo:"Graduandome", puntaje:8}, {tipo:"Relación seria", puntaje:9},{tipo: "Un parche", puntaje:9}]
 
@@ -49,6 +50,8 @@ export class Tab1Page {
       console.log(err)
     })
 
+    this.showContent=false;
+
   }
 
   public eventoPersonaje(e){
@@ -68,6 +71,11 @@ export class Tab1Page {
       cssClass:'toastStyle'
     });
     toast.present();
+  }
+
+  public showDiv(){
+
+    this.showContent=true;
   }
 
 }

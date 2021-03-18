@@ -5,7 +5,7 @@
 <ion-content [fullscreen]="true" style="width:100%; text-align:center; font-weight:bold; ">
 
 
-  <div style="padding: 5px;">
+  <div style="padding: 5px;" *ngIf="this.showContent">
     <span style="zoom:1.5">
       <ion-icon [name]="this.icon" [color]="this.color"></ion-icon>
     </span>
@@ -57,4 +57,6 @@
 
 
   </div>
+
+  <ion-button expand="block" color="tertiary" (click)="showDiv()"> show div</ion-button>
 </ion-content>
