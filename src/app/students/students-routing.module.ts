@@ -3,13 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path:'information',
+    path:'',
     loadChildren: ()=> import('./information/information.module').then(m=>m.InformationPageModule)
   },
-  {
-    path: 'form',
-    loadChildren: () => import('./form/form.module').then( m => m.FormPageModule)
-  }
+
 ];
 
 @NgModule({

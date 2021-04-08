@@ -26,10 +26,10 @@ export class Tab3Page {
   public async getDataAt(){
 
     let resp:AHPeople[]|boolean;
-
     
       await this.aHService.getData()
       .then((res:AHPeople[])=>{
+        
         resp=res;
       })
       .catch((err:boolean)=>{
@@ -42,18 +42,9 @@ export class Tab3Page {
         this.AhData=resp;
         console.log(this.AhData.length)
       }
-
    
-
-  
-      
-    
-    
     //this.aHService.getLocalData();
     
-
-
-
   }
 
 

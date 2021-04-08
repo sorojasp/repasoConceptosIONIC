@@ -4,19 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FormPageRoutingModule } from './form-routing.module';
+import { TabsPageRoutingModule } from './tabs-routing.module';
 
-import { FormPage } from './form.page';
+import { TabsPage } from './tabs.page';
+import {HeaderModule} from './../../shared/components/header/header.module'
 
-import {HeaderModule} from './.././../shared/components/header/header.module'
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FormPageRoutingModule,
+    TabsPageRoutingModule, 
     HeaderModule
   ],
-  declarations: [FormPage]
+  declarations: [TabsPage]
 })
-export class FormPageModule {}
+export class TabsPageModule {}

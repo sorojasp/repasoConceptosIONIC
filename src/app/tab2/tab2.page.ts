@@ -26,5 +26,9 @@ export class Tab2Page {
 
   }
 
+  public goToTeachers(){
+    this.router.navigate(['../teachers'])
+  }
+
 
 }
